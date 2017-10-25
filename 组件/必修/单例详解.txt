@@ -1,0 +1,37 @@
+package com.lans.lwk.pracdemo.com.lans.lwk.appclass;
+
+/**
+ * Created by Li on 2017/10/25.
+ */
+
+public class Singleton {
+    //双重锁
+    //可以保证线程的安全，但不完美
+    private static volatile Singleton singleton=null;//volatile 保证可见性和原子性和顺序性
+    private Singleton(){
+
+    }
+
+    public static Singleton GetInstance(){
+        if(singleton==null){                   //主要是为了解决效率问题，因为同步需要消耗资源
+            synchronized (Singleton.class){
+                if(singleton==null){           //为了防止多线程执行。
+                    singleton=new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+//枚举单例 推荐使用枚举单例
+代码简单，实现序列化，保证线程安全
+enum Single{
+INSTANCE;
+
+private Single(){
+        
+    }
+}
+
+将枚举单例反编译
+未完待续......
