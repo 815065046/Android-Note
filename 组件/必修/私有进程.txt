@@ -1,0 +1,7 @@
+私有进程
+android:process=":remote"，以冒号开头，冒号后面的字符串原则上是可以随意指定的。如果我们的包名为“com.example.processtest”，则实际的进程名
+为“com.example.processtest:remote”。这种设置形式表示该进程为当前应用的私有进程，其他应用的组件不可以和它跑在同一个进程中。
+
+全局进程
+进程名称不以“:”开头的进程都可以叫全局进程，如android:process="com.example.processtest.remote"，以小写字母开头，表示运行在一个以这个名字命名的全局进程中，其他
+应用通过设置相同的ShareUID可以和它跑在同一个进程。
