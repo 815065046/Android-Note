@@ -25,13 +25,20 @@ public class Singleton {
 }
 //枚举单例 推荐使用枚举单例
 代码简单，实现序列化，保证线程安全
-enum Single{
+enum Singleton{
 INSTANCE;
 
-private Single(){
+private Singleton(){
         
     }
 }
 
 将枚举单例反编译
-未完待续......
+Compiled from "Singleton.java"
+public final class com.lans.lwk.pracdemo.com.lans.lwk.appclass.Singleton extends java.lang.Enum{
+    public static final com.lans.lwk.pracdemo.com.lans.lwk.appclass.Singleton INSTANCE;
+    public static final com.lans.lwk.pracdemo.com.lans.lwk.appclass.Singleton[] values();
+    public static com.lans.lwk.pracdemo.com.lans.lwk.appclass.Singleton valueOf(java.lang.String);
+    static {};
+}
+可以看到如上代码：自动继承了Enum类，并且INSTANCE成为了public static final常量，并且提供了values和valueOf方法保证了序列化。
