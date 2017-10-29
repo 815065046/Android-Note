@@ -1,4 +1,4 @@
-一、什么是Intent,有什么作用?
+  一、什么是Intent,有什么作用?
     Android的应用程序包括四大组件：Activity、contentProvider、Service、BroadcastReceiver,为了方便不同组件之间的交流通信，应用程序就采用了一种统一的方式启动组件及传递数据，即使用Intent。            
     Intent封装了Android应用程序需要启动某个组件的"意图"，Intent类的对象是组件间的通信载体，一个Intent对象就是一组信息，其包含接收Intent组件所关心的信息（如action 和 Data）和Android 系统关心的信息(如Category等)。也就是说，发送"意图"的组件通过Intent对象所包含的内容，来启动指定的(即Component属性)或通过筛选(即Action&Category属性)的某(些)组件，然后实施相应的动作（即Action属性）并传递相应的数据(即Data属性)以便完成相应的动作。
 
