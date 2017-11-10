@@ -1,0 +1,18 @@
+先来了解一下MVC：
+M-Model-模型、V-View-视图、C-Controller-控制器，MVC和MVP两者结合来看，Controlller/Presenter在MVC/MVP中都起着逻辑控制处理的角色，起着控制各业务流程的作用。而 MVP与MVC最不同的一点是M与V是不直接关联的也是就Model与View不存在直接关系，这两者之间间隔着的是Presenter层，其负责调控 View与Model之间的间接交互。在 Android中很重要的一点就是对UI的操作基本上需要异步进行也就是在MainThread中才能操作UI，所以对View与Model的切断分离是 合理的。此外Presenter与View、Model的交互使用接口定义交互操作可以进一步达到松耦合也可以通过接口更加方便地进行单元测试。
+
+MVP：
+
+MVP之Model：
+
+模型这一层之中做的工作是具体业务逻辑处理的实现，都伴随着程序中各种数据的处理，复杂一些的就明显需要实现一个Interface来松耦合了。
+
+MVP之View：
+
+视图这一层体现的很轻薄，负责显示数据、提供友好界面跟用户交互就行。MVP下Activity和Fragment体现在了这一 层，Activity一般也就做加载UI视图、设置监听再交由Presenter处理的一些工作，所以也就需要持有相应Presenter的引用。例 如，Activity上滚动列表时隐藏或者显示Acionbar（Toolbar），这样的UI逻辑时也应该在这一层。另外在View上输入的数据做一些 判断时，例如，EditText的输入数据，假如是简单的非空判断则可以作为View层的逻辑，而当需要对EditText的数据进行更复杂的比较时，如 从数据库获取本地数据进行判断时明显需要经过Model层才能返回了，所以这些细节需要自己掂量。
+
+MVP之Presenter：
+
+Presenter这一层处理着程序各种逻辑的分发，收到View层UI上的反馈命令、定时命令、系统命令等指令后分发处理逻辑交由Model层做具体的业务操作。
+
+具体代码见WPor项目。
