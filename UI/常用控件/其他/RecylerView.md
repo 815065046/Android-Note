@@ -164,4 +164,21 @@ mAdapter.setOnItemClickLitener(new OnItemClickLitener()
 
         });
 
+//设置占据的空间
+        manager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if(position % 5 == 0){
+                    return 4;
+                }else if(position % 5 == 1){
+                    return 3;
+                }else if(position % 5 == 2){
+                    return 1;
+                }else{
+                    return 2;
+                }
+
+            }
+        });
+
 拖拽：实现ItemTouchHelper.Callback 具体实现见代码
