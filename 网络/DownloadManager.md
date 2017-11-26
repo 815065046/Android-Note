@@ -1,7 +1,7 @@
 # DownlodaManager学习笔记
-**代码见Pracdemo/DownLoad包下代码   也可见Utils包下的DownLoadUtils文件**
+** 代码见Pracdemo/DownLoad包下代码   也可见Utils包下的DownLoadUtils文件**
 ## 概念
-**DownloadManager:** 从Android 2.3（API level 9）开始Android用系统服务(Service)的方式提供了Download Manager来优化处理长时间的下载操作。Download Manager处理HTTP连接并监控连接中的状态变化以及系统重启来确保每一个下载任务顺利完成。在大多数涉及到下载的情况中使用Download Manager都是不错的选择，特别是当用户切换不同的应用以后下载需要在后台继续进行，以及当下载任务顺利完成非常重要的情况（DownloadManager对于断点续传功能支持很好）。要想使用Download Manager，使用getSystemService方法请求系统的DOWNLOAD_SERVICE服务.
+**DownloadManager:**  从Android 2.3（API level 9）开始Android用系统服务(Service)的方式提供了Download Manager来优化处理长时间的下载操作。Download Manager处理HTTP连接并监控连接中的状态变化以及系统重启来确保每一个下载任务顺利完成。在大多数涉及到下载的情况中使用Download Manager都是不错的选择，特别是当用户切换不同的应用以后下载需要在后台继续进行，以及当下载任务顺利完成非常重要的情况（DownloadManager对于断点续传功能支持很好）。要想使用Download Manager，使用getSystemService方法请求系统的DOWNLOAD_SERVICE服务.
 
 ## 第一步：获取服务
 ```java
