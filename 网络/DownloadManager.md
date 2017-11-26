@@ -1,14 +1,17 @@
-´úÂë¼ûPracdemo/DownLoad°üÏÂ´úÂë   Ò²¿É¼ûUtils°üÏÂµÄDownLoadUtilsÎÄ¼ş
+# DownlodaManagerÑ§Ï°±Ê¼Ç
+**´úÂë¼ûPracdemo/DownLoad°üÏÂ´úÂë   Ò²¿É¼ûUtils°üÏÂµÄDownLoadUtilsÎÄ¼ş**
+## ¸ÅÄî
+**DownloadManager:** ´ÓAndroid 2.3£¨API level 9£©¿ªÊ¼AndroidÓÃÏµÍ³·şÎñ(Service)µÄ·½Ê½Ìá¹©ÁËDownload ManagerÀ´ÓÅ»¯´¦Àí³¤Ê±¼äµÄÏÂÔØ²Ù×÷¡£Download Manager´¦ÀíHTTPÁ¬½Ó²¢¼à¿ØÁ¬½ÓÖĞµÄ×´Ì¬±ä»¯ÒÔ¼°ÏµÍ³ÖØÆôÀ´È·±£Ã¿Ò»¸öÏÂÔØÈÎÎñË³ÀûÍê³É¡£ÔÚ´ó¶àÊıÉæ¼°µ½ÏÂÔØµÄÇé¿öÖĞÊ¹ÓÃDownload Manager¶¼ÊÇ²»´íµÄÑ¡Ôñ£¬ÌØ±ğÊÇµ±ÓÃ»§ÇĞ»»²»Í¬µÄÓ¦ÓÃÒÔºóÏÂÔØĞèÒªÔÚºóÌ¨¼ÌĞø½øĞĞ£¬ÒÔ¼°µ±ÏÂÔØÈÎÎñË³ÀûÍê³É·Ç³£ÖØÒªµÄÇé¿ö£¨DownloadManager¶ÔÓÚ¶ÏµãĞø´«¹¦ÄÜÖ§³ÖºÜºÃ£©¡£ÒªÏëÊ¹ÓÃDownload Manager£¬Ê¹ÓÃgetSystemService·½·¨ÇëÇóÏµÍ³µÄDOWNLOAD_SERVICE·şÎñ.
 
-DownloadManager:´ÓAndroid 2.3£¨API level 9£©¿ªÊ¼AndroidÓÃÏµÍ³·şÎñ(Service)µÄ·½Ê½Ìá¹©ÁËDownload ManagerÀ´ÓÅ»¯´¦Àí³¤Ê±¼äµÄÏÂÔØ²Ù×÷¡£Download Manager´¦ÀíHTTPÁ¬½Ó²¢¼à¿ØÁ¬½ÓÖĞµÄ×´Ì¬±ä»¯ÒÔ¼°ÏµÍ³ÖØÆôÀ´È·±£Ã¿Ò»¸öÏÂÔØÈÎÎñË³ÀûÍê³É¡£ÔÚ´ó¶àÊıÉæ¼°µ½ÏÂÔØµÄÇé¿öÖĞÊ¹ÓÃDownload Manager¶¼ÊÇ²»´íµÄÑ¡Ôñ£¬ÌØ±ğÊÇµ±ÓÃ»§ÇĞ»»²»Í¬µÄÓ¦ÓÃÒÔºóÏÂÔØĞèÒªÔÚºóÌ¨¼ÌĞø½øĞĞ£¬ÒÔ¼°µ±ÏÂÔØÈÎÎñË³ÀûÍê³É·Ç³£ÖØÒªµÄÇé¿ö£¨DownloadManager¶ÔÓÚ¶ÏµãĞø´«¹¦ÄÜÖ§³ÖºÜºÃ£©¡£ÒªÏëÊ¹ÓÃDownload Manager£¬Ê¹ÓÃgetSystemService·½·¨ÇëÇóÏµÍ³µÄDOWNLOAD_SERVICE·şÎñ.
-
-µÚÒ»²½£º»ñÈ¡·şÎñ
+## µÚÒ»²½£º»ñÈ¡·şÎñ
+```java
 String serviceString = Context.DOWNLOAD_SERVICE;  
 DownloadManager downloadManager;  
-downloadManager = (DownloadManager) getSystemService(serviceString); 
+downloadManager = (DownloadManager) getSystemService(serviceString);
+```
 
-µÚ¶ş²½:ÏÂÔØÎÄ¼ş
-
+## µÚ¶ş²½:ÏÂÔØÎÄ¼ş
+```java
 String url="https://raw.githubusercontent.com/815065046/Android-Note/master/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/Android%E6%8A%80%E8%83%BD%E6%A0%91.xmind";
 
         DownloadManager.Request request=new DownloadManager.Request(Uri.parse(url));  //¹¹½¨Ò»¸örequest
@@ -16,33 +19,35 @@ String url="https://raw.githubusercontent.com/815065046/Android-Note/master/%E6%
         request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
 
         long id=downloadManager.enqueue(request);  //·µ»ØÈÎÎñID.
+        ```
 ÔÚÕâÀï·µ»ØµÄid±äÁ¿ÊÇÏµÍ³Îªµ±Ç°µÄÏÂÔØÇëÇó·ÖÅäµÄÒ»¸öÎ¨Ò»µÄID£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ıÕâ¸öIDÖØĞÂ»ñµÃÕâ¸öÏÂÔØÈÎÎñ£¬½øĞĞÒ»Ğ©×Ô¼ºÏëÒª½øĞĞµÄ²Ù×÷»òÕß²éÑ¯ÏÂÔØµÄ×´Ì¬ÒÔ¼°È¡ÏûÏÂÔØµÈµÈ¡£ÎÒÃÇ¿ÉÒÔÍ¨¹ıaddRequestHeader·½·¨ÎªDownloadManager.Request¶ÔÏórequestÌí¼ÓHTTPÍ·£¬Ò²¿ÉÒÔÍ¨¹ısetMimeType·½·¨ÖØĞ´´Ó·şÎñÆ÷·µ»ØµÄmime type¡£ÎÒÃÇ»¹¿ÉÒÔÖ¸¶¨ÔÚÊ²Ã´Á¬½Ó×´Ì¬ÏÂÖ´ĞĞÏÂÔØ²Ù×÷¡£setAllowedNetworkTypes·½·¨¿ÉÒÔÓÃÀ´ÏŞ¶¨ÔÚWiFi»¹ÊÇÊÖ»úÍøÂçÏÂ½øĞĞÏÂÔØ£¬setAllowedOverRoaming·½·¨¿ÉÒÔÓÃÀ´×èÖ¹ÊÖ»úÔÚÂşÓÎ×´Ì¬ÏÂÏÂÔØ¡£×ÜµÄÀ´Ëµ£¬¾ÍÊÇ¿ÉÅäÖÃµÄ
-ÏÂÃæµÄ´úÂëÆ¬¶ÎÓÃÓÚÖ¸¶¨Ò»¸ö½Ï´óµÄÎÄ¼şÖ»ÄÜÔÚWiFiÏÂ½øĞĞÏÂÔØ£º
+**ÏÂÃæµÄ´úÂëÆ¬¶ÎÓÃÓÚÖ¸¶¨Ò»¸ö½Ï´óµÄÎÄ¼şÖ»ÄÜÔÚWiFiÏÂ½øĞĞÏÂÔØ£º**
 
-request.setAllowedNetworkTypes(Request.NETWORK_WIFI);  
+`request.setAllowedNetworkTypes(Request.NETWORK_WIFI);`
 getRecommendedMaxBytesOverMobileÀà·½·¨£¨¾²Ì¬·½·¨£©£¬·µ»ØÒ»¸öµ±Ç°ÊÖ»úÍøÂçÁ¬½ÓÏÂµÄ×î´ó½¨Òé×Ö½ÚÊı£¬¿ÉÒÔÀ´ÅĞ¶ÏÏÂÔØÊÇ·ñÓ¦¸ÃÏŞ¶¨ÔÚWiFiÌõ¼şÏÂ¡£
 µ÷ÓÃenqueue·½·¨Ö®ºó£¬Ö»ÒªÊı¾İÁ¬½Ó¿ÉÓÃ²¢ÇÒDownload Manager¿ÉÓÃ£¬ÏÂÔØ¾Í»á¿ªÊ¼¡£
 ÒªÔÚÏÂÔØÍê³ÉµÄÊ±ºò»ñµÃÒ»¸öÏµÍ³Í¨Öª£¨notification£©,×¢²áÒ»¸ö¹ã²¥½ÓÊÜÕßÀ´½ÓÊÕACTION_DOWNLOAD_COMPLETE¹ã²¥£¬Õâ¸ö¹ã²¥»á°üº¬Ò»¸ö
 EXTRA_DOWNLOAD_IDĞÅÏ¢ÔÚintentÖĞ°üº¬ÁËÒÑ¾­Íê³ÉµÄÕâ¸öÏÂÔØµÄID,´úÂëÆ¬¶ÎÈçÏÂËùÊ¾£º
 
+```java
 IntentFilter filter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);  
-      
+
 BroadcastReceiver receiver = new BroadcastReceiver() {  
   @Override  
   public void onReceive(Context context, Intent intent) {  
     long reference = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);  
     if (myDownloadReference == reference) {  
-       
+
     }  
   }  
 };  
-registerReceiver(receiver, filter); 
+registerReceiver(receiver, filter);
 
 
-Í¨ÖªÀ¸ÑùÊ½£º
+//Í¨ÖªÀ¸ÑùÊ½£º
 request.setTitle(¡°File¡±);  
 request.setDescription(¡°Earthquake XML¡±);  
-
+```
 setNotificationVisibility·½·¨¿ÉÒÔÓÃÀ´¿ØÖÆÊ²Ã´Ê±ºòÏÔÊ¾Notification£¬ÉõÖÁÊÇÒş²Ø¸ÃrequestµÄNotification¡£ÓĞÒÔÏÂ¼¸¸ö²ÎÊı£º
 Request.VISIBILITY_VISIBLE£ºÔÚÏÂÔØ½øĞĞµÄ¹ı³ÌÖĞ£¬Í¨ÖªÀ¸ÖĞ»áÒ»Ö±ÏÔÊ¾¸ÃÏÂÔØµÄNotification£¬µ±ÏÂÔØÍê³ÉÊ±£¬¸ÃNotification»á±»ÒÆ³ı£¬ÕâÊÇÄ¬ÈÏµÄ²ÎÊıÖµ¡£
 Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED£ºÔÚÏÂÔØ¹ı³ÌÖĞÍ¨ÖªÀ¸»áÒ»Ö±ÏÔÊ¾¸ÃÏÂÔØµÄNotification£¬ÔÚÏÂÔØÍê³Éºó¸ÃNotification»á¼ÌĞøÏÔÊ¾£¬Ö±µ½ÓÃ»§µã»÷¸ÃNotification»òÕßÏû³ı¸ÃNotification¡£
@@ -65,50 +70,51 @@ query·½·¨´«µİÒ»¸öDownloadManager.Query¶ÔÏó×÷Îª²ÎÊı£¬Í¨¹ıDownloadManager.Query¶ÔÏ
 Download Manager°üº¬ÁËÒ»ÏµÁĞCOLUMN_*¾²Ì¬String³£Á¿£¬¿ÉÒÔÓÃÀ´²éÑ¯CursorÖĞµÄ½á¹ûÁĞË÷Òı¡£ÎÒÃÇ¿ÉÒÔ²éÑ¯µ½ÏÂÔØÈÎÎñµÄ¸÷ÖÖÏ¸½Ú£¬°üÀ¨×´Ì¬£¬
 ÎÄ¼ş´óĞ¡£¬ÒÑ¾­ÏÂÔØµÄ×Ö½ÚÊı£¬±êÌâ£¬ÃèÊö£¬URI£¬±¾µØÎÄ¼şÃûºÍURI£¬Ã½ÌåÀàĞÍÒÔ¼°Media Provider download URI¡£
 ÏÂÃæµÄ´úÂë¶ÎÊÇÍ¨¹ı×¢²á¼àÌıÏÂÔØÍê³ÉÊÂ¼şµÄ¹ã²¥½ÓÊÜÕßÀ´²éÑ¯ÏÂÔØÍê³ÉÎÄ¼şµÄ±¾µØÎÄ¼şÃûºÍURIµÄÊµÏÖ·½·¨£º
+```java
 
 public void onReceive(Context context, Intent intent) {  
   long reference = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);  
   if (myDownloadReference == reference) {  
-       
+
     Query myDownloadQuery = new Query();  
     myDownloadQuery.setFilterById(reference);  
-        
+
     Cursor myDownload = downloadManager.query(myDownloadQuery);  
     if (myDownload.moveToFirst()) {  
       int fileNameIdx =   
         myDownload.getColumnIndex(DownloadManager.COLUMN_LOCAL_FILENAME);  
       int fileUriIdx =   
         myDownload.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI);  
-  
+
       String fileName = myDownload.getString(fileNameIdx);  
       String fileUri = myDownload.getString(fileUriIdx);  
-      
+
       // TODO Do something with the file.  
       Log.d(TAG, fileName + " : " + fileUri);  
     }  
     myDownload.close();  
-  
+
   }  
 }  
-
+```
  ¶ÔÓÚÔİÍ£ºÍÊ§°ÜµÄÏÂÔØ£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ı²éÑ¯COLUMN_REASONÁĞ²éÑ¯³öÔ­ÒòµÄÕûÊıÂë¡£
 ¶ÔÓÚSTATUS_PAUSED×´Ì¬µÄÏÂÔØ£¬¿ÉÒÔÍ¨¹ıDownloadManager.PAUSED_*¾²Ì¬³£Á¿À´·­Òë³öÔ­ÒòµÄÕûÊıÂë£¬½ø¶øÅĞ¶Ï³öÏÂÔØÊÇÓÉÓÚµÈ´ıÍøÂçÁ¬½Ó
 »¹ÊÇµÈ´ıWiFiÁ¬½Ó»¹ÊÇ×¼±¸ÖØĞÂÏÂÔØÈıÖÖÔ­Òò¶øÔİÍ£¡£
 ¶ÔÓÚSTATUS_FAILED×´Ì¬µÄÏÂÔØ£¬ÎÒÃÇ¿ÉÒÔÍ¨¹ıDownloadManager.ERROR_*À´ÅĞ¶ÏÊ§°ÜµÄÔ­Òò£¬¿ÉÄÜÊÇ´íÎóÂë£¨Ê§°ÜÔ­Òò£©°üÀ¨Ã»ÓĞ´æ´¢Éè±¸£¬´æ´¢¿Õ¼ä²»×ã£¬ÖØ¸´µÄÎÄ¼şÃû£¬»òÕßHTTP errors¡£
 ÏÂÃæµÄ´úÂëÊÇÈçºÎ²éÑ¯³öµ±Ç°ËùÓĞµÄÔİÍ£µÄÏÂÔØÈÎÎñ£¬ÌáÈ¡³öÔİÍ£µÄÔ­ÒòÒÔ¼°ÎÄ¼şÃû³Æ£¬ÏÂÔØ±êÌâÒÔ¼°µ±Ç°½ø¶ÈµÄÊµÏÖ·½·¨£º
-
+```java
 // Obtain the Download Manager Service.  
 String serviceString = Context.DOWNLOAD_SERVICE;  
 DownloadManager downloadManager;  
 downloadManager = (DownloadManager)getSystemService(serviceString);  
-  
+
 // Create a query for paused downloads.  
 Query pausedDownloadQuery = new Query();  
 pausedDownloadQuery.setFilterByStatus(DownloadManager.STATUS_PAUSED);  
-  
+
 // Query the Download Manager for paused downloads.  
 Cursor pausedDownloads = downloadManager.query(pausedDownloadQuery);  
-  
+
 // Find the column indexes for the data we require.  
 int reasonIdx = pausedDownloads.getColumnIndex(DownloadManager.COLUMN_REASON);  
 int titleIdx = pausedDownloads.getColumnIndex(DownloadManager.COLUMN_TITLE);  
@@ -116,14 +122,14 @@ int fileSizeIdx =
   pausedDownloads.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES);      
 int bytesDLIdx =   
   pausedDownloads.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR);  
-  
+
 // Iterate over the result Cursor.  
 while (pausedDownloads.moveToNext()) {  
   // Extract the data we require from the Cursor.  
   String title = pausedDownloads.getString(titleIdx);  
   int fileSize = pausedDownloads.getInt(fileSizeIdx);  
   int bytesDL = pausedDownloads.getInt(bytesDLIdx);  
-  
+
   // Translate the pause reason to friendly text.  
   int reason = pausedDownloads.getInt(reasonIdx);  
   String reasonString = "Unknown";  
@@ -136,19 +142,19 @@ while (pausedDownloads.moveToNext()) {
       reasonString = "Waiting to retry"; break;  
     default : break;  
   }  
-  
+
   // Construct a status summary  
   StringBuilder sb = new StringBuilder();  
   sb.append(title).append("\n");  
   sb.append(reasonString).append("\n");  
   sb.append("Downloaded ").append(bytesDL).append(" / " ).append(fileSize);  
-  
+
   // Display the status   
   Log.d("DOWNLOAD", sb.toString());  
 }  
-  
+
 // Close the result Cursor.  
 pausedDownloads.close();  
-
+```
 
 ²Î¿¼£ºhttp://blog.csdn.net/carrey1989/article/details/8060155
